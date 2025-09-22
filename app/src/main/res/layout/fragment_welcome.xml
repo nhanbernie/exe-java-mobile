@@ -1,15 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:gravity="center">
+    android:background="@color/bgOnboarding">
 
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome 👋"
-        android:textSize="28sp"
-        android:textStyle="bold"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Profile Avatar -->
+            <ImageView
+                android:id="@+id/profileAvatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circle_avatar_bg"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Welcome Text -->
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Good morning Gerald!"
+                android:textColor="#2D3748"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/profileAvatar"
+                app:layout_constraintTop_toTopOf="@id/profileAvatar" />
+
+            <!-- Welcome Back Text -->
+            <TextView
+                android:id="@+id/tvWelcomeBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Welcome back"
+                android:textColor="#718096"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/profileAvatar"
+                app:layout_constraintStart_toEndOf="@id/profileAvatar" />
+
+            <!-- Divider Line -->
+            <View
+                android:id="@+id/dividerLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#E2E8F0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileAvatar" />
+
+            <!-- Main Title Amazing -->
+            <TextView
+                android:id="@+id/tvAmazing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Amazing"
+                android:textColor="#2D3748"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerLine" />
+
+            <!-- Sparkle Icon 1 -->
+            <TextView
+                android:id="@+id/sparkle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="✨"
+                android:textSize="32sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvAmazing"
+                app:layout_constraintStart_toEndOf="@id/tvAmazing"
+                app:layout_constraintTop_toTopOf="@id/tvAmazing" />
+
+            <!-- Avatar Group Container -->
+            <FrameLayout
+                android:id="@+id/avatarGroup"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAmazing">
+
+                <!-- Avatar 1 -->
+                <ImageView
+                    android:id="@+id/avatar1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="0dp"
+                    android:background="@drawable/circle_avatar_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_avatar_1" />
+
+                <!-- Avatar 2 -->
+                <ImageView
+                    android:id="@+id/avatar2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/circle_avatar_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_avatar_2" />
+
+                <!-- Avatar 3 -->
+                <ImageView
+                    android:id="@+id/avatar3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="60dp"
+                    android:background="@drawable/circle_avatar_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_avatar_3" />
+
+            </FrameLayout>
+
+            <!-- Teams Text -->
+            <TextView
+                android:id="@+id/tvTeams"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Teams"
+                android:textColor="#2D3748"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/avatarGroup"
+                app:layout_constraintStart_toEndOf="@id/avatarGroup"
+                app:layout_constraintTop_toTopOf="@id/avatarGroup" />
+
+            <!-- Appears Text -->
+            <TextView
+                android:id="@+id/tvAppears"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Appears"
+                android:textColor="#2D3748"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/avatarGroup" />
+
+            <!-- Here Text -->
+            <TextView
+                android:id="@+id/tvHere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Here"
+                android:textColor="#2D3748"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAppears" />
+
+            <!-- Cool Emoji Group -->
+            <LinearLayout
+                android:id="@+id/emojiGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/tvHere"
+                app:layout_constraintStart_toEndOf="@id/tvHere"
+                app:layout_constraintTop_toTopOf="@id/tvHere">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="😎"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="😎"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="😎"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+            <!-- Description Text -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Ready to get started?\nUpload your first project and find the perfect freelancer today!"
+                android:textColor="#4A5568"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHere" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </FrameLayout>
