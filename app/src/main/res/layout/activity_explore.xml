@@ -4,14 +4,14 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="?attr/colorSurface"
     android:fitsSystemWindows="true">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000">
+        android:background="?attr/colorSurface">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -20,7 +20,7 @@
             android:background="@android:color/transparent"
             app:title="@string/title_explore"
             app:titleCentered="true"
-            app:titleTextColor="#FFFFFF"
+            app:titleTextColor="?attr/colorOnSurface"
             app:menu="@menu/action_overflow_menu" />
 
         <androidx.constraintlayout.widget.ConstraintLayout

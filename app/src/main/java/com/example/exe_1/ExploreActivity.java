@@ -1,6 +1,8 @@
 package com.example.exe_1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -31,8 +33,10 @@ public class ExploreActivity extends AppCompatActivity implements ProfilesAdapte
         super.onCreate(savedInstanceState);
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         
-        // Set status bar color to black
-        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black, getTheme()));
+        // Set status bar color based on current theme
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(android.R.attr.colorBackground, typedValue, true);
+        getWindow().setStatusBarColor(typedValue.data);
         
         setContentView(R.layout.activity_explore);
 
@@ -76,7 +80,10 @@ public class ExploreActivity extends AppCompatActivity implements ProfilesAdapte
 
     @Override
     public void onCardClick(@NonNull String id) {
-        Toast.makeText(this, "Open profile: " + id, Toast.LENGTH_SHORT).show();
+        // Start ProfileDetailActivity when card is clicked
+        Intent intent = new Intent(this, ProfileDetailActivity.class);
+        intent.putExtra("profile_id", id);
+        startActivity(intent);
     }
 
     @Override
