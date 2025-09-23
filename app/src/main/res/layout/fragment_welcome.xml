@@ -14,7 +14,7 @@
         android:layout_marginBottom="16dp"
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="24dp"
-        app:cardElevation="0dp">
+        app:cardElevation="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -82,16 +82,6 @@
                 app:layout_constraintTop_toBottomOf="@id/dividerLine" />
 
             <!-- Sparkle Icon 1 -->
-            <TextView
-                android:id="@+id/sparkle1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="✨"
-                android:textSize="32sp"
-                app:layout_constraintBottom_toBottomOf="@id/tvAmazing"
-                app:layout_constraintStart_toEndOf="@id/tvAmazing"
-                app:layout_constraintTop_toTopOf="@id/tvAmazing" />
 
             <!-- Avatar Group Container -->
             <FrameLayout

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="bgOnboarding">#000000</color>
-    <color name="indicatorActive">#FFFFFF</color>
-    <color name="indicatorInactive">#666666</color>
-</resources>

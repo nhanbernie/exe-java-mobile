@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bgOnboarding">#FFFFFF</color>
-    <color name="indicatorActive">#000000</color>
-    <color name="indicatorInactive">#BDBDBD</color>
+    <!-- Material Design 3 Colors -->
+    <color name="md_theme_light_primary">#6366F1</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#E8E7FF</color>
+    <color name="md_theme_light_onPrimaryContainer">#1F1A5B</color>
+    <color name="md_theme_light_secondary">#5D5FDB</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#E1E0FF</color>
+    <color name="md_theme_light_onSecondaryContainer">#181270</color>
+    <color name="md_theme_light_background">#FEFBFF</color>
+    <color name="md_theme_light_onBackground">#1B1B1F</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_onSurface">#1B1B1F</color>
+    <color name="md_theme_light_surfaceVariant">#F4F0F7</color>
+    <color name="md_theme_light_onSurfaceVariant">#46464F</color>
+    <color name="md_theme_light_outline">#767680</color>
+    <color name="md_theme_light_outlineVariant">#C7C5D0</color>
+
+    <!-- Dark Theme -->
+    <color name="md_theme_dark_primary">#B3B6FF</color>
+    <color name="md_theme_dark_onPrimary">#2C2973</color>
+    <color name="md_theme_dark_primaryContainer">#3F3B8A</color>
+    <color name="md_theme_dark_onPrimaryContainer">#E8E7FF</color>
+    <color name="md_theme_dark_secondary">#C3C2FF</color>
+    <color name="md_theme_dark_onSecondary">#2A2586</color>
+    <color name="md_theme_dark_secondaryContainer">#40399D</color>
+    <color name="md_theme_dark_onSecondaryContainer">#E1E0FF</color>
+    <color name="md_theme_dark_background">#000000</color>
+    <color name="md_theme_dark_onBackground">#E3E2E6</color>
+    <color name="md_theme_dark_surface">#111318</color>
+    <color name="md_theme_dark_onSurface">#E3E2E6</color>
+    <color name="md_theme_dark_surfaceVariant">#46464F</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C7C5D0</color>
+    <color name="md_theme_dark_outline">#91909A</color>
+    <color name="md_theme_dark_outlineVariant">#46464F</color>
+
+    <!-- Legacy colors for backwards compatibility -->
+    <color name="bgOnboarding">@color/md_theme_light_background</color>
+    <color name="indicatorActive">@color/md_theme_light_primary</color>
+    <color name="indicatorInactive">@color/md_theme_light_outline</color>
 </resources>

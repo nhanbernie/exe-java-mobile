@@ -1,5 +1,6 @@
 package com.example.exe_1;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -42,17 +43,17 @@ public class OnboardingActivity extends AppCompatActivity {
         pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                updateIndicator(position);
+                updateIndicatorWithAnimation(position);
             }
         });
 
-        updateIndicator(0);
+        updateIndicatorWithAnimation(0);
     }
 
     private void createSteps(int total) {
         stepsContainer.removeAllViews();
-        int heightPx = dp(6);
-        int gapPx = dp(6);
+        int heightPx = dp(8);
+        int gapPx = dp(8);
 
         for (int i = 0; i < total; i++) {
             View bar = new View(this);
@@ -61,16 +62,44 @@ public class OnboardingActivity extends AppCompatActivity {
             if (i < total - 1) lp.setMarginEnd(gapPx);
             bar.setLayoutParams(lp);
             bar.setBackgroundResource(R.drawable.step_inactive);
+            bar.setAlpha(0.6f);
             stepsContainer.addView(bar);
         }
     }
 
-    private void updateIndicator(int current) {
+    private void updateIndicatorWithAnimation(int current) {
         for (int i = 0; i < stepsContainer.getChildCount(); i++) {
             View bar = stepsContainer.getChildAt(i);
-            bar.setBackgroundResource(i == current
-                    ? R.drawable.step_active
-                    : R.drawable.step_inactive);
+
+            if (i == current) {
+                // Animate to active state
+                bar.setBackgroundResource(R.drawable.step_active);
+                ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(bar, "alpha", bar.getAlpha(), 1.0f);
+                alphaAnimator.setDuration(300);
+                alphaAnimator.start();
+
+                ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(bar, "scaleX", 0.8f, 1.0f);
+                scaleXAnimator.setDuration(300);
+                scaleXAnimator.start();
+
+                ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(bar, "scaleY", 0.8f, 1.0f);
+                scaleYAnimator.setDuration(300);
+                scaleYAnimator.start();
+            } else {
+                // Animate to inactive state
+                bar.setBackgroundResource(R.drawable.step_inactive);
+                ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(bar, "alpha", bar.getAlpha(), 0.6f);
+                alphaAnimator.setDuration(300);
+                alphaAnimator.start();
+
+                ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(bar, "scaleX", bar.getScaleX(), 1.0f);
+                scaleXAnimator.setDuration(300);
+                scaleXAnimator.start();
+
+                ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(bar, "scaleY", bar.getScaleY(), 1.0f);
+                scaleYAnimator.setDuration(300);
+                scaleYAnimator.start();
+            }
         }
         stepsContainer.setContentDescription("Step " + (current + 1) + " of " + TOTAL_STEPS);
     }
