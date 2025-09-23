@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Exe_1</string>
+    <string name="title_explore">Explore</string>
+    <string name="hint_search_role">UI/UX Designer</string>
+    <string name="cd_search">Search</string>
+    <string name="cd_filter">Filter</string>
+    <string name="cd_bookmark">Bookmark</string>
+    <string name="cd_avatar">Avatar</string>
+    <string name="cd_open_drawer">Open navigation drawer</string>
+    <string name="cd_close_drawer">Close navigation drawer</string>
+    <string name="action_search">Search</string>
+    <string name="action_more">More</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_settings">Settings</string>
+    <string name="fmt_years_exp">%1$d yrs exp</string>
+    <string name="fmt_rate_range">$%1$d–$%2$d/hr</string>
+    <string name="fmt_price_day">$%1$d - $%2$d / day</string>
 </resources>

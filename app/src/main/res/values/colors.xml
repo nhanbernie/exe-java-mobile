@@ -40,4 +40,11 @@
     <color name="bgOnboarding">@color/md_theme_light_background</color>
     <color name="indicatorActive">@color/md_theme_light_primary</color>
     <color name="indicatorInactive">@color/md_theme_light_outline</color>
+    <color name="searchHint">#9AA0A6</color>
+    <color name="filterButtonBg">#1E1E1E</color>
+    <color name="cardTitle">#FFFFFF</color>
+    <color name="cardBody">#E5E7EB</color>
+    <color name="chipExpBg">#FFFFFF</color>
+    <color name="chipRoleBg">#F4A225</color>
+    <color name="chipTextDark">#1A1A1A</color>
 </resources>

@@ -2,6 +2,7 @@ package com.example.exe_1;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -24,9 +25,14 @@ public class GetStartedFragment extends Fragment {
         // Trỏ tới res/layout/fragment_get_started.xml
         View view = inflater.inflate(R.layout.fragment_get_started, container, false);
 
-        // Setup button animation
+        // Setup button animation & navigation
         MaterialButton btnGetStarted = view.findViewById(R.id.btnGetStarted);
         setupButtonAnimation(btnGetStarted);
+        btnGetStarted.setOnClickListener(v -> {
+            if (getActivity() != null) {
+                startActivity(new Intent(getActivity(), ExploreActivity.class));
+            }
+        });
 
         return view;
     }
